@@ -1,0 +1,54 @@
+{
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.formatOnSave": true,
+  "eslint.enable": true,
+  "eslint.alwaysShowStatus": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": false,
+    "eslint.autoFixOnSave": false,
+    "source.fixAll.stylelint": true
+  },
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact"
+  ],
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "stylelint.enable": true,
+  "stylelint.configFile": "./.stylelintrc.json",
+  "stylelint.customSyntax": "postcss-scss",
+  "stylelint.ignoreDisables": false,
+  "stylelint.reportNeedlessDisables": false,
+  "stylelint.reportInvalidScopeDisables": false,
+  "stylelint.validate": ["css", "scss"],
+  "stylelint.packageManager": "npm",
+  "stylelint.snippet": ["css", "less", "postcss", "scss"],
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "[scss]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  "eslint.format.enable": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "GitHub Dark Dimmed",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "files.autoSave": "onFocusChange",
+  "workbench.startupEditor": "none",
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "material-icon-theme.folders.associations": {
+    "webforms": "Public",
+    "bp-layout": "Layout"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "eslint.lintTask.enable": true
+}

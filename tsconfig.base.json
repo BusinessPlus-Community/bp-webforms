@@ -14,7 +14,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@bp-community/components": ["libs/components/src/index.ts"],
+      "@bp-community/functions": ["libs/functions/src/index.ts"],
+      "@bp-community/styles": ["libs/scss/src/index.ts"],
+      "@bp-community/scss/styles": ["libs/scss/src/custom.scss"],
+      "@bp-community/types": ["libs/types/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
