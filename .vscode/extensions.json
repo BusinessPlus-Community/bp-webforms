@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "nrwl.angular-console",
+    "esbenp.prettier-vscode",
+    "firsttris.vscode-jest-runner",
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
+    "editorconfig.editorconfig",
+    "wix.vscode-import-cost",
+    "pkief.material-icon-theme",
+    "github.github-vscode-theme",
+    "formulahendry.auto-rename-tag"
+  ]
+}
