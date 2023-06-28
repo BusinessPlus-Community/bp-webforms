@@ -1,0 +1,13 @@
+:: Create Monorepo ::
+yarn dlx create-nx-workspace@latest --allPrompts=true --appName=demo --bundler=vite --commit.email=zach.birge@highlineschools.org --commit.name="Zach Birge" --defaultBase=main --docker=false --name=bp-components --nxCloud=false --packageManager=yarn --preset=react-monorepo --style=scss
+
+:: Setup Git ::
+git remote add origin https://github.com/BusinessPlus-Community/bp-components.git
+git add .
+git commit -m "initial commit"
+git push -u -f origin main
+
+:: Monorepo Additional Setup ::
+yarn set version stable
+
+yarn add -D cross-env @nx/storybook nx-stylelint
