@@ -1626,6 +1626,7 @@ __metadata:
     "@nx/workspace": 16.4.0
     "@popperjs/core": ^2.11.8
     "@storybook/addon-essentials": 7.0.24
+    "@storybook/addon-links": ^7.0.24
     "@storybook/core-common": ^7.0.24
     "@storybook/core-server": 7.0.24
     "@storybook/react-vite": 7.0.24
@@ -1670,6 +1671,7 @@ __metadata:
     eslint-plugin-vitest: ^0.2.6
     html-webpack-plugin: ^5.5.3
     jsdom: ~22.1.0
+    moment: ^2.29.4
     msw: ^1.2.2
     msw-storybook-addon: ^1.8.0
     nx: 16.4.0
@@ -3051,6 +3053,32 @@ __metadata:
     "@storybook/global": ^5.0.0
     "@storybook/preview-api": 7.0.24
   checksum: 45f38e523e08c0f515e2bd69c713c1c3d9a624a8897dbcd2786a2db0a2aee11542d49c36992df5f9c2f17b1a416f812f2039819322c1b99f900e5252d91ab599
+  languageName: node
+  linkType: hard
+
+"@storybook/addon-links@npm:^7.0.24":
+  version: 7.0.24
+  resolution: "@storybook/addon-links@npm:7.0.24"
+  dependencies:
+    "@storybook/client-logger": 7.0.24
+    "@storybook/core-events": 7.0.24
+    "@storybook/csf": ^0.1.0
+    "@storybook/global": ^5.0.0
+    "@storybook/manager-api": 7.0.24
+    "@storybook/preview-api": 7.0.24
+    "@storybook/router": 7.0.24
+    "@storybook/types": 7.0.24
+    prop-types: ^15.7.2
+    ts-dedent: ^2.0.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  peerDependenciesMeta:
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 335320ab4db88d444815355f8989a2852c0d2d4c033586b990b23b632e0953c08049fbf6975c4a7e578d22a089572569d9137627343f5ef43aaa26157184b5da
   languageName: node
   linkType: hard
 
@@ -11348,6 +11376,13 @@ __metadata:
     pkg-types: ^1.0.3
     ufo: ^1.1.2
   checksum: ebf2e2b5cfb4c6e45e8d0bbe82710952247023f12626cb0997c41b1bb6e57c8b6fc113aa709228ad511382ab0b4eebaab759806be0578093b3635d3e940bd63b
+  languageName: node
+  linkType: hard
+
+"moment@npm:^2.29.4":
+  version: 2.29.4
+  resolution: "moment@npm:2.29.4"
+  checksum: 0ec3f9c2bcba38dc2451b1daed5daded747f17610b92427bebe1d08d48d8b7bdd8d9197500b072d14e326dd0ccf3e326b9e3d07c5895d3d49e39b6803b76e80e
   languageName: node
   linkType: hard
 
