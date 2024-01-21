@@ -1,75 +1,62 @@
 {
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "targetDefaults": {
+    "build": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    },
+    "lint": {
+      "cache": true,
+      "inputs": [
+        "default",
+        "{workspaceRoot}/.eslintrc.json",
+        "{workspaceRoot}/.eslintignore",
+        "{workspaceRoot}/eslint.config.js"
+      ]
+    },
+    "@nx/vite:test": {
+      "cache": true,
+      "inputs": ["default", "^production"]
+    },
+    "build-storybook": {
+      "cache": true,
+      "inputs": [
+        "default",
+        "^production",
+        "{projectRoot}/.storybook/**/*",
+        "{projectRoot}/tsconfig.storybook.json"
+      ]
+    }
+  },
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
       "default",
+      "!{projectRoot}/.eslintrc.json",
+      "!{projectRoot}/eslint.config.js",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
       "!{projectRoot}/tsconfig.spec.json",
-      "!{projectRoot}/.eslintrc.json",
       "!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)",
       "!{projectRoot}/.storybook/**/*",
-      "!{projectRoot}/.stylelintrc(.(json|yml|yaml|js))?"
+      "!{projectRoot}/tsconfig.storybook.json"
     ],
     "sharedGlobals": []
-  },
-  "targetDefaults": {
-    "build": {
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
-    },
-    "e2e": {
-      "inputs": ["default", "^production"]
-    },
-    "test": {
-      "inputs": ["default", "^production"]
-    },
-    "lint": {
-      "inputs": [
-        "default",
-        "{workspaceRoot}/.eslintrc.json",
-        "{workspaceRoot}/.eslintignore"
-      ]
-    },
-    "build-storybook": {
-      "inputs": ["default", "^production", "!{projectRoot}/.storybook/**/*"]
-    },
-    "stylelint": {
-      "inputs": [
-        "default",
-        "{workspaceRoot}/.stylelintrc(.(json|yml|yaml|js))?"
-      ]
-    }
-  },
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "nx/tasks-runners/default",
-      "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e",
-          "build-storybook",
-          "stylelint"
-        ]
-      }
-    }
   },
   "generators": {
     "@nx/react": {
       "application": {
-        "style": "scss",
-        "linter": "eslint",
-        "bundler": "vite",
         "babel": true
       },
-      "component": {
-        "style": "scss"
-      },
       "library": {
-        "style": "scss",
-        "linter": "eslint",
         "unitTestRunner": "vitest"
+      }
+    }
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "options": {
+        "cacheableOperations": ["build-storybook"]
       }
     }
   }
