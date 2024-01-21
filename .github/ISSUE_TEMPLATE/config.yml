@@ -1,0 +1,6 @@
+blank_issues_enabled: true
+
+contact_links:
+  - name: Highline Public Schools Service Desk 🔐
+    url: https://highlineschools.incidentiq.com/
+    about: Please report security vulnerabilities here.
