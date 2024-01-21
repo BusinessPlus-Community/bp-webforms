@@ -2,8 +2,7 @@ import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
-  addons: ['@storybook/addon-essentials',
-  '@storybook/addon-links',],
+  addons: ['@storybook/addon-essentials'],
   framework: {
     name: '@storybook/react-vite',
     options: {
@@ -12,16 +11,6 @@ const config: StorybookConfig = {
       },
     },
   },
-  staticDirs: [
-    {
-      from: '../../../tools/assets',
-      to: '/assets',
-    },
-    {
-      from: '../../../tools/mocks/mockServiceWorker.js',
-      to: '/mockServiceWorker.js',
-    },
-  ],
 };
 
 export default config;

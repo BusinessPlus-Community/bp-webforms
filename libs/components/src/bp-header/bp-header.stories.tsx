@@ -13,5 +13,5 @@ export const Primary = {
   args: {
     uniqueId: uuid().slice(0, 8),
     headerText: 'BP Community Components Header Example',
-    imgSrc: './assets/logo.png',},
+    imgSrc: './assets/logo-dark.svg',},
 }
