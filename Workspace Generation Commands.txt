@@ -2,7 +2,7 @@
 yarn dlx create-nx-workspace@latest --allPrompts=true --commit.email=zbirge@bpluscommunity.com --commit.name="Zach Birge" --defaultBase=main --e2eTestRunner=cypress --name=bp-webforms --nxCloud=github --packageManager=yarn --preset=ts --style=scss --workspaceType=integrated
 
 -- Component Library Generation --
-yarn nx g @nx/react:library --name=components --bundler=vite --component --compiler=swc --importPath=@bplus-community/webform-components --js=false --linter=eslint --directory=components --publishable --style=scss --strict --unitTestRunner=vitest -projectNameAndRootFormat=as-provided
-yarn nx g  @nx/react:storybook-configuration --project=components --configureStaticServe --generateStories --interactionTests --js=false --linter=eslint --tsConfiguration --dryRun
+yarn nx g @nx/react:library --name=components --bundler=vite --component --compiler=swc --importPath=@bplus-community/webform-components --js=false --linter=eslint --directory=components --publishable --style=scss --strict --unitTestRunner=jest --projectNameAndRootFormat=as-provided
+yarn nx g  @nx/react:storybook-configuration --project=components --configureStaticServe --generateStories --interactionTests --js=false --linter=eslint --tsConfiguration
 
 ## Generate components
