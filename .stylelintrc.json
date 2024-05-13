@@ -10,11 +10,9 @@
       "files": ["**/*.css"],
       "extends": [
         "stylelint-config-standard",
-        "stylelint-config-prettier",
         "stylelint-prettier/recommended"
       ],
       "rules": {
-        "prettier/prettier": true,
         "property-no-vendor-prefix": [
           true,
           {
@@ -28,12 +26,9 @@
       "extends": [
         "stylelint-config-standard-scss",
         "stylelint-config-recommended-scss",
-        "stylelint-config-prettier",
-        "stylelint-prettier/recommended",
         "stylelint-config-prettier-scss"
       ],
       "rules": {
-        "prettier/prettier": true,
         "plugin/sass-render-errors": true,
         "property-no-vendor-prefix": [
           true,

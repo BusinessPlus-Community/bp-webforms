@@ -1,0 +1,43 @@
+diff --git a/dist/components/PanelContent.js b/dist/components/PanelContent.js
+index 2c0fa51516e209ea0cf15bf5ceb6b34324628869..d2a3291d4ab15b04418958dde9e1e1e3334b6b50 100644
+--- a/dist/components/PanelContent.js
++++ b/dist/components/PanelContent.js
+@@ -33,11 +33,14 @@ var __importStar = (this && this.__importStar) || function (mod) {
+     __setModuleDefault(result, mod);
+     return result;
+ };
++var __importDefault = (this && this.__importDefault) || function (mod) {
++    return (mod && mod.__esModule) ? mod : { "default": mod };
++};
+ Object.defineProperty(exports, "__esModule", { value: true });
+ exports.PanelContent = void 0;
+ var react_1 = __importStar(require("react"));
+ var manager_api_1 = require("@storybook/manager-api");
+-var components_1 = require("@storybook/components");
++var icons_1 = __importDefault(require("@storybook/icons"));
+ var blocks_1 = require("@storybook/blocks");
+ var constants_1 = require("../constants");
+ var utils_1 = require("../utils");
+@@ -65,7 +68,7 @@ var PanelContent = function () {
+     };
+     return (react_1.default.createElement("div", { style: { padding: '10px 20px' } },
+         react_1.default.createElement("button", { style: { marginBottom: '5px' }, onClick: handleClear },
+-            react_1.default.createElement(components_1.Icons, { style: { marginRight: '5px' }, icon: "trash" }),
++            react_1.default.createElement(icons_1.default.TrashIcon, { style: { marginRight: '5px' } }),
+             "Clear All Cookies"),
+         react_1.default.createElement(blocks_1.ObjectControl, { name: "cookie", onChange: handleChange, value: value || defaultCookie, theme: "" })));
+ };
+diff --git a/dist/index.js b/dist/index.js
+index c0dc0f6c52401c3c37b4e4d4a610d62601d766d2..24ea70c724b5db5cea5c36580e90d6100a015730 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -25,9 +25,6 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+ Object.defineProperty(exports, "__esModule", { value: true });
+ exports.managerEntries = exports.config = void 0;
+ __exportStar(require("./cookieDecorator"), exports);
+-if (module && module.hot && module.hot.decline) {
+-    module.hot.decline();
+-}
+ function config(entry) {
+     if (entry === void 0) { entry = []; }
+     return __spreadArray(__spreadArray([], entry, true), [require.resolve('./preview')], false);

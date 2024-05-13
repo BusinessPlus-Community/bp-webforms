@@ -1,0 +1,26 @@
+diff --git a/package.json b/package.json
+index 926a561d2addbe7aa079a63116616ccbcbd937e8..c026b0dab1c986012a4be5329800bf0765ef7d1a 100644
+--- a/package.json
++++ b/package.json
+@@ -25,10 +25,8 @@
+     "build": "tsc",
+     "prepublishOnly": "yarn build"
+   },
+-  "devDependencies": {
+-    "typescript": "^5.0.4"
+-  },
+-  "peerDependencies": {
++  "dependencies": {
++    "typescript": "^5.0.4",
+     "@storybook/blocks": "^8.0.0",
+     "@storybook/components": "^8.0.0",
+     "@storybook/manager-api": "^8.0.0",
+@@ -37,7 +35,7 @@
+     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+   },
+-  "peerDependenciesMeta": {
++  "dependenciesMeta": {
+     "react": {
+       "optional": true
+     },

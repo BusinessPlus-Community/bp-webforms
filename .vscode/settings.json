@@ -2,12 +2,11 @@
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.formatOnSave": true,
   "eslint.enable": true,
-  "eslint.alwaysShowStatus": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": true,
-    "source.organizeImports": false,
-    "eslint.autoFixOnSave": false,
-    "source.fixAll.stylelint": true
+    "source.fixAll": "explicit",
+    "source.organizeImports": "never",
+    "eslint.autoFixOnSave": "never",
+    "source.fixAll.stylelint": "explicit"
   },
   "eslint.validate": [
     "javascript",

@@ -1,47 +1,25 @@
-:: Create Monorepo ::
-yarn dlx create-nx-workspace@latest --allPrompts=true --appName=demo --bundler=vite --commit.email=zach.birge@highlineschools.org --commit.name="Zach Birge" --defaultBase=main --docker=false --name=bp-components --nxCloud=false --packageManager=yarn --preset=react-monorepo --style=scss
+-- Couldn't get the command below to work in a windows powershell and command window.  It ran successfully in the debian distro for WSL on Windows 10 22H2. --
+yarn dlx create-nx-workspace@latest --allPrompts=true --commit.email=zbirge@bpluscommunity.com --commit.name="Zach Birge" --defaultBase=main --e2eTestRunner=cypress --name=bp-webforms --nxCloud=github --packageManager=yarn --preset=ts --style=scss --workspaceType=integrated
 
-:: Setup Git ::
-git remote add origin https://github.com/BusinessPlus-Community/bp-components.git
-git add .
-git commit -m "initial commit"
-git push -u -f origin main
+-- Component Library Generation --
+yarn nx g @nx/react:library --name=components --bundler=vite --component --compiler=swc --importPath=@bplus-community/webform-components --js=false --linter=eslint --directory=components --publishable --style=scss --strict --unitTestRunner=jest --projectNameAndRootFormat=as-provided
+yarn nx g  @nx/react:storybook-configuration --project=components --configureStaticServe --generateStories --interactionTests --js=false --linter=eslint --tsConfiguration
 
-:: Monorepo Additional Setup ::
-yarn set version stable
-
-yarn add -D cross-env @nx/storybook nx-stylelint @nx/js
-
-nx g @nx/vite:init --compiler=swc --includeLib=true --uiFramework=react --dryRun
-
-nx g @nx/storybook:init --uiFramework=@storybook/react-vite --js=false --dryRun
+## Generate components
 
 
-:: Component Library ::
-nx g @nx/react:library --name=components --bundler=vite --component=false --compiler=swc --globalCss=false --inSourceTests=false --importPath=@bp-community/components --js=false --linter=eslint --publishable=true --routing=false --style=scss --strict=true --unitTestRunner=vitest --dryRun
-
-nx g @nx/react:component --name=bp-header --project=components --directory=bp-header --export=true --flat=true --globalCss=false inSourceTests=false --routing=false --style=scss --js=false --dryRun
-
-nx g @nx/react:storybook-configuration --name=components --configureStaticServe=false --configureCypress=false --generateCypressSpecs=false --generateStories=true --configureTestRunner=false --tsConfiguration=true --js=false --linter=eslint --dryRun
-
-nx g @nx/react:component-story --componentPath=bp-header/bp-header.tsx --project=components --dryRun
-
-nx g nx-stylelint:configuration --project=components --formatter=github --dryRun
-
-nx g nx-stylelint:scss --project=components --dryRun
+:: Style Library Generation ::
+yarn nx g @nx/react:library --name=styles --bundler=vite --compiler=swc --importPath=@bplus-community/webform-styles --js=false --linter=eslint --directory=styles --publishable --style=scss --strict --unitTestRunner=jest --projectNameAndRootFormat=as-provided --dryRun
 
 
+:: Demo Webform Generation ::
+yarn nx g @nx/react:application --name=demo-webform --bundler=vite --directory=demo --classComponent=false --compiler=swc --e2eTestRunner=cypress --globalCss=false --inSourceTests=false --js=false --linter=eslint --projectNameAndRootFormat=as-provided --pascalCaseFiles=false --routing=false --style=scss --strict=true --setParserOptionsProject=false --unitTestRunner=jest --dryRun
+yarn nx g @nx/react:storybook-configuration --project=demo-webform --configureStaticServe=true --generateStories=true --interactionTests=true --js=false --linter=eslint --tsConfiguration=true --dryRun
 
-:: Functions Library ::
-nx g @nx/react:library --name=functions --bundler=vite --component=false --compiler=swc --globalCss=false --inSourceTests=false --importPath=@bp-community/functions --js=false --linter=eslint --publishable=true --routing=false --style=scss --strict=true --unitTestRunner=vitest --dryRun
+-- Update NX version --
+yarn add -D cross-env
+yarn cross-env NX_MIGRATE_USE_LOCAL=true nx migrate latest
+yarn cross-env NX_MIGRATE_USE_LOCAL=true nx migrate --run-migrations --if-exists
 
-
-
-:: Types Library ::
-nx g @nx/react:library --name=types --bundler=vite --component=false --compiler=swc --globalCss=false --inSourceTests=false --importPath=@bp-community/types --js=false --linter=eslint --publishable=true --routing=false --style=scss --strict=true --unitTestRunner=vitest --dryRun
-
-
-:: Style Library ::
-nx g @nx/react:library --name=scss --bundler=vite --component=false --compiler=swc --globalCss=false --inSourceTests=false --importPath=@bp-community/styles --js=false --linter=eslint --publishable=true --routing=false --style=scss --strict=true --unitTestRunner=vitest --dryRun
-
-nx g nx-stylelint:configuration --project=scss --formatter=github --dryRun
+:: Update Storybook version ::
+yarn dlx storybook@latest upgrade --yes --config-dir .\components\.storybook --package-manager yarn2
