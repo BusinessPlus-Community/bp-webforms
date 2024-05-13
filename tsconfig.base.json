@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@bplus-community/webform-components": ["components/src/index.ts"]
+      "@bplus-community/webform-components": ["components/src/index.ts"],
+      "@bplus-community/webform-styles": ["styles/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

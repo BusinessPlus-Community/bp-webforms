@@ -6,3 +6,20 @@ yarn nx g @nx/react:library --name=components --bundler=vite --component --compi
 yarn nx g  @nx/react:storybook-configuration --project=components --configureStaticServe --generateStories --interactionTests --js=false --linter=eslint --tsConfiguration
 
 ## Generate components
+
+
+:: Style Library Generation ::
+yarn nx g @nx/react:library --name=styles --bundler=vite --compiler=swc --importPath=@bplus-community/webform-styles --js=false --linter=eslint --directory=styles --publishable --style=scss --strict --unitTestRunner=jest --projectNameAndRootFormat=as-provided --dryRun
+
+
+:: Demo Webform Generation ::
+yarn nx g @nx/react:application --name=demo-webform --bundler=vite --directory=demo --classComponent=false --compiler=swc --e2eTestRunner=cypress --globalCss=false --inSourceTests=false --js=false --linter=eslint --projectNameAndRootFormat=as-provided --pascalCaseFiles=false --routing=false --style=scss --strict=true --setParserOptionsProject=false --unitTestRunner=jest --dryRun
+yarn nx g @nx/react:storybook-configuration --project=demo-webform --configureStaticServe=true --generateStories=true --interactionTests=true --js=false --linter=eslint --tsConfiguration=true --dryRun
+
+-- Update NX version --
+yarn add -D cross-env
+yarn cross-env NX_MIGRATE_USE_LOCAL=true nx migrate latest
+yarn cross-env NX_MIGRATE_USE_LOCAL=true nx migrate --run-migrations --if-exists
+
+:: Update Storybook version ::
+yarn dlx storybook@latest upgrade --yes --config-dir .\components\.storybook --package-manager yarn2

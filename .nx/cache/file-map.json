@@ -1,228 +1,174 @@
 {
   "version": "6.0",
-  "nxVersion": "17.2.8",
+  "nxVersion": "19.0.2",
   "deps": {
-    "@swc/helpers": "~0.5.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tslib": "^2.3.0",
-    "@nx/eslint": "17.2.8",
-    "@nx/eslint-plugin": "17.2.8",
-    "@nx/jest": "17.2.8",
-    "@nx/js": "17.2.8",
-    "@nx/react": "^17.2.8",
-    "@nx/storybook": "17.2.8",
-    "@nx/vite": "17.2.8",
-    "@nx/web": "17.2.8",
-    "@nx/workspace": "17.2.8",
-    "@storybook/addon-essentials": "^7.5.3",
-    "@storybook/addon-interactions": "^7.5.3",
-    "@storybook/core-server": "^7.5.3",
+    "@popperjs/core": "^2.11.8",
+    "@storybook/test": "8.0.10",
+    "@swc/helpers": "~0.5.11",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "moment": "^2.30.1",
+    "react": "18.3.1",
+    "react-bootstrap": "^2.10.2",
+    "react-dom": "18.3.1",
+    "tslib": "^2.6.2",
+    "@nx/cypress": "19.0.2",
+    "@nx/eslint": "19.0.2",
+    "@nx/eslint-plugin": "19.0.2",
+    "@nx/jest": "19.0.2",
+    "@nx/js": "19.0.2",
+    "@nx/react": "19.0.2",
+    "@nx/storybook": "19.0.2",
+    "@nx/vite": "19.0.2",
+    "@nx/web": "19.0.2",
+    "@nx/workspace": "19.0.2",
+    "@storybook/addon-essentials": "^8.0.10",
+    "@storybook/addon-interactions": "^8.0.10",
+    "@storybook/blocks": "^8.0.10",
+    "@storybook/components": "^8.0.10",
+    "@storybook/core-server": "^8.0.10",
     "@storybook/jest": "^0.2.3",
-    "@storybook/react-vite": "^7.5.3",
-    "@storybook/test-runner": "^0.13.0",
+    "@storybook/manager-api": "^8.0.10",
+    "@storybook/preview-api": "^8.0.10",
+    "@storybook/react-vite": "^8.0.10",
+    "@storybook/test-runner": "^0.18.0",
     "@storybook/testing-library": "^0.2.2",
-    "@swc-node/register": "~1.6.7",
-    "@swc/cli": "~0.1.62",
-    "@swc/core": "~1.3.85",
-    "@swc/jest": "0.2.20",
-    "@testing-library/react": "14.0.0",
-    "@types/jest": "^29.4.0",
-    "@types/node": "18.16.9",
-    "@types/react": "18.2.33",
-    "@types/react-dom": "18.2.14",
-    "@typescript-eslint/eslint-plugin": "^6.9.1",
-    "@typescript-eslint/parser": "^6.9.1",
-    "@vitejs/plugin-react-swc": "^3.5.0",
-    "@vitest/ui": "~0.34.6",
-    "eslint": "~8.48.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-import": "2.27.5",
-    "eslint-plugin-jsx-a11y": "6.7.1",
-    "eslint-plugin-react": "7.32.2",
-    "eslint-plugin-react-hooks": "4.6.0",
-    "jest": "^29.4.1",
-    "jest-environment-jsdom": "^29.4.1",
-    "jsdom": "~22.1.0",
-    "nx": "17.2.8",
-    "prettier": "^2.6.2",
-    "sass": "^1.55.0",
-    "ts-jest": "^29.1.0",
-    "ts-node": "10.9.1",
-    "typescript": "~5.2.2",
-    "vite": "^5.0.0",
-    "vite-plugin-dts": "~2.3.0",
-    "vitest": "~0.34.6"
+    "@storybook/types": "^8.0.10",
+    "@swc-node/register": "1.9.1",
+    "@swc/cli": "0.3.12",
+    "@swc/core": "~1.5.5",
+    "@swc/jest": "0.2.36",
+    "@testing-library/react": "15.0.7",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.11",
+    "@types/react": "18.3.2",
+    "@types/react-dom": "18.3.0",
+    "@typescript-eslint/eslint-plugin": "7.8.0",
+    "@typescript-eslint/parser": "7.8.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "@vitejs/plugin-react-swc": "^3.6.0",
+    "@vitest/coverage-v8": "^1.6.0",
+    "@vitest/ui": "1.6.0",
+    "cross-env": "^7.0.3",
+    "cypress": "^13.9.0",
+    "eslint": "8.57.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^18.0.0",
+    "eslint-config-next": "^14.2.3",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-cypress": "^3.2.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-googlemaps": "^1.4.15",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jest": "^28.5.0",
+    "eslint-plugin-jsonc": "^2.15.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.7",
+    "eslint-plugin-storybook": "^0.8.0",
+    "eslint-plugin-vitest": "^0.5.4",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "jsdom": "~24.0.0",
+    "msw": "^2.3.0",
+    "msw-storybook-addon": "^2.0.2",
+    "nx": "19.0.2",
+    "prettier": "^3.2.5",
+    "sass": "^1.77.1",
+    "storybook-addon-cookie": "patch:storybook-addon-cookie@patch%3Astorybook-addon-cookie@npm%253A3.2.0%23~/.yarn/patches/storybook-addon-cookie-npm-3.2.0-3412c91688.patch%3A%3Aversion=3.2.0&hash=737f20#~/.yarn/patches/storybook-addon-cookie-patch-2832e2b8b4.patch",
+    "stylelint": "^16.5.0",
+    "stylelint-config-prettier-scss": "^1.0.0",
+    "stylelint-config-recommended-scss": "^14.0.0",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-prettier": "^5.0.0",
+    "stylelint-sass-render-errors": "^4.0.1",
+    "stylelint-scss": "^6.3.0",
+    "ts-jest": "^29.1.2",
+    "ts-node": "10.9.2",
+    "typescript": "5.4.5",
+    "vite": "^5.2.11",
+    "vite-plugin-dts": "~3.9.1",
+    "vitest": "1.6.0"
   },
   "pathMappings": {
     "@bplus-community/webform-components": [
       "components/src/index.ts"
+    ],
+    "@bplus-community/webform-styles": [
+      "styles/src/index.ts"
     ]
   },
   "nxJsonPlugins": [],
   "fileMap": {
-    "projectFileMap": {
-      "components": [
-        {
-          "file": "components/.eslintrc.json",
-          "hash": "7388911630545237055"
-        },
-        {
-          "file": "components/.storybook/main.ts",
-          "hash": "5176175865499228338",
-          "deps": [
-            "npm:@storybook/react-vite"
-          ]
-        },
-        {
-          "file": "components/.storybook/preview.ts",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "components/README.md",
-          "hash": "7579566876095758834"
-        },
-        {
-          "file": "components/jest.config.ts",
-          "hash": "3594893281944575378"
-        },
-        {
-          "file": "components/package.json",
-          "hash": "3806517768054066940"
-        },
-        {
-          "file": "components/project.json",
-          "hash": "10018529811447302203"
-        },
-        {
-          "file": "components/src/index.ts",
-          "hash": "14428353282588746736"
-        },
-        {
-          "file": "components/src/lib/bp-header/bp-header.module.scss",
-          "hash": "125145030238681982"
-        },
-        {
-          "file": "components/src/lib/bp-header/bp-header.scss",
-          "hash": "125145030238681982"
-        },
-        {
-          "file": "components/src/lib/bp-header/bp-header.spec.tsx",
-          "hash": "16523872747567030918",
-          "deps": [
-            "npm:@testing-library/react"
-          ]
-        },
-        {
-          "file": "components/src/lib/bp-header/bp-header.stories.tsx",
-          "hash": "10257669110636079125",
-          "deps": [
-            "npm:@storybook/react",
-            "npm:@storybook/testing-library",
-            "npm:@storybook/jest"
-          ]
-        },
-        {
-          "file": "components/src/lib/bp-header/bp-header.tsx",
-          "hash": "1431278578398089858"
-        },
-        {
-          "file": "components/src/lib/bp-header/index.ts",
-          "hash": "3000236900716231490"
-        },
-        {
-          "file": "components/src/lib/index.ts",
-          "hash": "3000236900716231490"
-        },
-        {
-          "file": "components/tsconfig.json",
-          "hash": "2326967431376342328"
-        },
-        {
-          "file": "components/tsconfig.lib.json",
-          "hash": "7917431207945799333"
-        },
-        {
-          "file": "components/tsconfig.spec.json",
-          "hash": "13369031804221838106"
-        },
-        {
-          "file": "components/tsconfig.storybook.json",
-          "hash": "320199857073971216"
-        },
-        {
-          "file": "components/vite.config.ts",
-          "hash": "11730070690427012558",
-          "deps": [
-            "npm:vite",
-            "npm:@vitejs/plugin-react-swc",
-            "npm:vite-plugin-dts",
-            "npm:path",
-            "npm:@nx/vite/plugins/nx-tsconfig-paths.plugin"
-          ]
-        }
-      ]
-    },
     "nonProjectFiles": [
       {
         "file": ".editorconfig",
-        "hash": "5443105041930014821"
+        "hash": "11532813898455409296"
       },
       {
         "file": ".eslintignore",
-        "hash": "7663861978715868291"
+        "hash": "17582862164426027397"
       },
       {
         "file": ".eslintrc.json",
-        "hash": "18315524891129148814"
+        "hash": "8758671878865846440"
       },
       {
         "file": ".github/AUTHORS.md",
-        "hash": "11252091242801078326"
+        "hash": "15148839290850627560"
       },
       {
         "file": ".github/CODEOWNERS.md",
-        "hash": "6929762220826824950"
+        "hash": "18377744598421700542"
       },
       {
         "file": ".github/ISSUE_TEMPLATE/Bug_Report.yml",
-        "hash": "9708522215260678195"
+        "hash": "396666830580106504"
       },
       {
         "file": ".github/ISSUE_TEMPLATE/Documentation_Issue.md",
-        "hash": "10780971115898391904"
+        "hash": "16923764933656586913"
       },
       {
         "file": ".github/ISSUE_TEMPLATE/Feature_Request.md",
-        "hash": "10420356815260173791"
+        "hash": "2669875522706679211"
       },
       {
         "file": ".github/ISSUE_TEMPLATE/config.yml",
-        "hash": "2589003143689462074"
+        "hash": "2196788691776015467"
       },
       {
         "file": ".github/PULL_REQUEST_TEMPLATE.md",
-        "hash": "6616391936043588271"
+        "hash": "3398303040448213540"
       },
       {
         "file": ".github/linters/.markdown-lint.yml",
-        "hash": "16026235895396821867"
+        "hash": "1915720754355670551"
       },
       {
         "file": ".github/policies/resourceManagement.yml",
-        "hash": "17381037232591598920"
+        "hash": "2517093011266336662"
       },
       {
         "file": ".gitignore",
-        "hash": "16877376182141465221"
+        "hash": "8006173599923703420"
       },
       {
         "file": ".prettierignore",
-        "hash": "16448050467312557263"
+        "hash": "2687824826588932174"
       },
       {
         "file": ".prettierrc",
-        "hash": "16267754514737964994"
+        "hash": "4528514762372116198"
+      },
+      {
+        "file": ".stylelintrc.json",
+        "hash": "13540071219410626581"
       },
       {
         "file": ".vscode/extensions.json",
@@ -230,7 +176,7 @@
       },
       {
         "file": ".vscode/settings.json",
-        "hash": "4924924856149792677"
+        "hash": "7088916867217788600"
       },
       {
         "file": ".yarn/cache/@aashutoshrathi-word-wrap-npm-1.2.6-5b1d95e487-6eebd12a5c.zip",
@@ -6234,27 +6180,35 @@
       },
       {
         "file": ".yarn/install-state.gz",
-        "hash": "13192491584014703058"
+        "hash": "1124383107041295674"
       },
       {
-        "file": ".yarn/releases/yarn-4.0.2.cjs",
-        "hash": "18186858436245718126"
+        "file": ".yarn/patches/storybook-addon-cookie-npm-3.2.0-3412c91688.patch",
+        "hash": "12368628050828804159"
+      },
+      {
+        "file": ".yarn/patches/storybook-addon-cookie-patch-2832e2b8b4.patch",
+        "hash": "12707047167814124933"
+      },
+      {
+        "file": ".yarn/patches/storybook-addon-cookie-patch-6538795445.patch",
+        "hash": "671898806066489082"
       },
       {
         "file": ".yarnrc.yml",
-        "hash": "9773565372686775399"
+        "hash": "2886304410880062839"
       },
       {
         "file": "CODE_OF_CONDUCT.md",
-        "hash": "2280009404208726430"
+        "hash": "3529936954872159131"
       },
       {
         "file": "CONTRIBUTING.md",
-        "hash": "4477586008599553443"
+        "hash": "18443117215532701955"
       },
       {
         "file": "LICENSE.md",
-        "hash": "17672936396789512931"
+        "hash": "2376692761078962270"
       },
       {
         "file": "NOTICE.md",
@@ -6262,44 +6216,392 @@
       },
       {
         "file": "README.md",
-        "hash": "1837311726242626933"
+        "hash": "7092345581762745964"
       },
       {
         "file": "SECURITY.md",
-        "hash": "4058237943236445398"
+        "hash": "5225022949697315791"
       },
       {
         "file": "SUPPORT.md",
-        "hash": "16492603707856463774"
+        "hash": "3164041247535247837"
       },
       {
         "file": "Workspace Generation Commands.txt",
-        "hash": "4513041737298048679"
+        "hash": "11602782935192920583"
       },
       {
         "file": "jest.config.ts",
-        "hash": "12333515226966617182"
+        "hash": "3407785570333453138"
       },
       {
         "file": "jest.preset.js",
-        "hash": "9430166341120122740"
+        "hash": "7473220183190921152"
       },
       {
         "file": "nx.json",
-        "hash": "12845843324231147219"
+        "hash": "6163249251430182573"
       },
       {
         "file": "package.json",
-        "hash": "12390689625606112309"
+        "hash": "11552704134784064523"
+      },
+      {
+        "file": "tools/assets/logo.png",
+        "hash": "1944465214316793945"
+      },
+      {
+        "file": "tools/mocks/mockServiceWorker.js",
+        "hash": "8705303812615296071"
+      },
+      {
+        "file": "tools/tsconfig.tools.json",
+        "hash": "11810713488198132402"
       },
       {
         "file": "tsconfig.base.json",
-        "hash": "259381218915600803"
+        "hash": "15215330417151513440"
+      },
+      {
+        "file": "vitest.workspace.ts",
+        "hash": "14272273950443054014"
       },
       {
         "file": "yarn.lock",
-        "hash": "6365816971202991898"
+        "hash": "7697017146755501639"
       }
-    ]
+    ],
+    "projectFileMap": {
+      "styles": [
+        {
+          "file": "styles/.eslintrc.json",
+          "hash": "7388911630545237055"
+        },
+        {
+          "file": "styles/README.md",
+          "hash": "7518912259565225611"
+        },
+        {
+          "file": "styles/jest.config.ts",
+          "hash": "16816268904282262411"
+        },
+        {
+          "file": "styles/package.json",
+          "hash": "4520056336299751542"
+        },
+        {
+          "file": "styles/project.json",
+          "hash": "6954450635179824114"
+        },
+        {
+          "file": "styles/src/index.ts",
+          "hash": "12612363038940150894"
+        },
+        {
+          "file": "styles/src/styles.scss",
+          "hash": "12285965789759173146"
+        },
+        {
+          "file": "styles/tsconfig.json",
+          "hash": "11610503207813775271"
+        },
+        {
+          "file": "styles/tsconfig.lib.json",
+          "hash": "1372575057696038725"
+        },
+        {
+          "file": "styles/tsconfig.spec.json",
+          "hash": "13369031804221838106"
+        },
+        {
+          "file": "styles/vite.config.ts",
+          "hash": "1932372250061951500",
+          "deps": [
+            "npm:path",
+            "npm:@nx/vite",
+            "npm:@vitejs/plugin-react-swc",
+            "npm:vite",
+            "npm:vite-plugin-dts"
+          ]
+        }
+      ],
+      "demo-webform": [
+        {
+          "file": "demo/.eslintrc.json",
+          "hash": "5502507411504195244"
+        },
+        {
+          "file": "demo/.storybook/main.ts",
+          "hash": "506260425376235418",
+          "deps": [
+            "npm:@storybook/react-vite"
+          ]
+        },
+        {
+          "file": "demo/.storybook/preview.ts",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "demo/index.html",
+          "hash": "1191292777113413652"
+        },
+        {
+          "file": "demo/project.json",
+          "hash": "4903401812062423514"
+        },
+        {
+          "file": "demo/public/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "demo/src/app/app.module.scss",
+          "hash": "8887387885984320532"
+        },
+        {
+          "file": "demo/src/app/app.spec.tsx",
+          "hash": "2992414858709616794",
+          "deps": [
+            "npm:@testing-library/react"
+          ]
+        },
+        {
+          "file": "demo/src/app/app.stories.tsx",
+          "hash": "7114662522594132191",
+          "deps": [
+            "npm:@storybook/react",
+            "npm:@storybook/testing-library",
+            "npm:@storybook/jest"
+          ]
+        },
+        {
+          "file": "demo/src/app/app.tsx",
+          "hash": "11264293622422528776",
+          "deps": [
+            "npm:classnames",
+            "npm:react-bootstrap",
+            "components",
+            "npm:bootstrap-icons",
+            "styles"
+          ]
+        },
+        {
+          "file": "demo/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "demo/src/main.tsx",
+          "hash": "4169355034420502327",
+          "deps": [
+            "npm:react",
+            "npm:react-dom"
+          ]
+        },
+        {
+          "file": "demo/src/styles.scss",
+          "hash": "5195668842064076916"
+        },
+        {
+          "file": "demo/tsconfig.app.json",
+          "hash": "12830091250963304118"
+        },
+        {
+          "file": "demo/tsconfig.json",
+          "hash": "8429295726351672058"
+        },
+        {
+          "file": "demo/tsconfig.spec.json",
+          "hash": "13800019362629030472"
+        },
+        {
+          "file": "demo/tsconfig.storybook.json",
+          "hash": "320199857073971216"
+        },
+        {
+          "file": "demo/vite.config.ts",
+          "hash": "13099383514528655627",
+          "deps": [
+            "npm:vite",
+            "npm:@vitejs/plugin-react-swc",
+            "npm:@nx/vite"
+          ]
+        }
+      ],
+      "demo-webform-e2e": [
+        {
+          "file": "demo-e2e/.eslintrc.json",
+          "hash": "12199001048877152138"
+        },
+        {
+          "file": "demo-e2e/cypress.config.ts",
+          "hash": "1458533092117038011",
+          "deps": [
+            "npm:@nx/cypress",
+            "npm:cypress"
+          ]
+        },
+        {
+          "file": "demo-e2e/project.json",
+          "hash": "9810446487658955608"
+        },
+        {
+          "file": "demo-e2e/src/e2e/app.cy.ts",
+          "hash": "13711017554497806723"
+        },
+        {
+          "file": "demo-e2e/src/fixtures/example.json",
+          "hash": "11785586596216172004"
+        },
+        {
+          "file": "demo-e2e/src/support/app.po.ts",
+          "hash": "15050139299431069743"
+        },
+        {
+          "file": "demo-e2e/src/support/commands.ts",
+          "hash": "10919820211288147459"
+        },
+        {
+          "file": "demo-e2e/src/support/e2e.ts",
+          "hash": "16679347722975383991"
+        },
+        {
+          "file": "demo-e2e/tsconfig.json",
+          "hash": "4966899981699294432"
+        }
+      ],
+      "components": [
+        {
+          "file": "components/.eslintrc.json",
+          "hash": "2438057684096468580"
+        },
+        {
+          "file": "components/.storybook/main.ts",
+          "hash": "15549872272042738648",
+          "deps": [
+            "npm:@storybook/react-vite"
+          ]
+        },
+        {
+          "file": "components/.storybook/preview.ts",
+          "hash": "6955858591169056801",
+          "deps": [
+            "npm:@storybook/addon-viewport",
+            "npm:moment",
+            "npm:msw",
+            "npm:msw-storybook-addon",
+            "npm:storybook-addon-cookie",
+            "styles"
+          ]
+        },
+        {
+          "file": "components/README.md",
+          "hash": "3969883082927197271"
+        },
+        {
+          "file": "components/jest.config.ts",
+          "hash": "17054850727421682698"
+        },
+        {
+          "file": "components/package.json",
+          "hash": "14318278797099389245"
+        },
+        {
+          "file": "components/project.json",
+          "hash": "7551260130395370192"
+        },
+        {
+          "file": "components/src/bp-header/bp-header.spec.tsx",
+          "hash": "6451345779019955045",
+          "deps": [
+            "npm:@testing-library/react"
+          ]
+        },
+        {
+          "file": "components/src/bp-header/bp-header.stories.tsx",
+          "hash": "6267758421606111048",
+          "deps": [
+            "npm:@storybook/react",
+            "npm:@storybook/test"
+          ]
+        },
+        {
+          "file": "components/src/bp-header/bp-header.tsx",
+          "hash": "14436795013312182882",
+          "deps": [
+            "npm:react",
+            "npm:classnames",
+            "npm:react-bootstrap",
+            "npm:uuid"
+          ]
+        },
+        {
+          "file": "components/src/bp-header/index.ts",
+          "hash": "4933857217085304913"
+        },
+        {
+          "file": "components/src/bp-webform-layout/bp-webform-layout.module.scss",
+          "hash": "5305054492834634770"
+        },
+        {
+          "file": "components/src/bp-webform-layout/bp-webform-layout.spec.tsx",
+          "hash": "13407648481493066989",
+          "deps": [
+            "npm:@testing-library/react"
+          ]
+        },
+        {
+          "file": "components/src/bp-webform-layout/bp-webform-layout.stories.tsx",
+          "hash": "18013705533144590344",
+          "deps": [
+            "npm:@storybook/react",
+            "npm:classnames",
+            "npm:react-bootstrap"
+          ]
+        },
+        {
+          "file": "components/src/bp-webform-layout/bp-webform-layout.tsx",
+          "hash": "6105417950165078382",
+          "deps": [
+            "npm:react",
+            "npm:classnames",
+            "npm:react-bootstrap"
+          ]
+        },
+        {
+          "file": "components/src/bp-webform-layout/index.ts",
+          "hash": "2361777463084880017"
+        },
+        {
+          "file": "components/src/index.ts",
+          "hash": "9239710127627380598"
+        },
+        {
+          "file": "components/tsconfig.json",
+          "hash": "2496347098014597242"
+        },
+        {
+          "file": "components/tsconfig.lib.json",
+          "hash": "15138141647444578465"
+        },
+        {
+          "file": "components/tsconfig.spec.json",
+          "hash": "11968741482217611638"
+        },
+        {
+          "file": "components/tsconfig.storybook.json",
+          "hash": "12171991821143835424"
+        },
+        {
+          "file": "components/vite.config.ts",
+          "hash": "10290100946794299487",
+          "deps": [
+            "npm:path",
+            "npm:@nx/vite",
+            "npm:@vitejs/plugin-react-swc",
+            "npm:vite",
+            "npm:vite-plugin-dts"
+          ]
+        }
+      ]
+    }
   }
 }

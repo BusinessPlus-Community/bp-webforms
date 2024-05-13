@@ -1,0 +1,118 @@
+{
+  "name": "demo-webform",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "demo/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/demo"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "demo-webform:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "demo-webform:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "demo-webform:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "demo-webform:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "demo-webform:build:development"
+        },
+        "production": {
+          "buildTarget": "demo-webform:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "../coverage/demo"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "demo-webform:build",
+        "spa": true
+      }
+    },
+    "storybook": {
+      "executor": "@nx/storybook:storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "demo/.storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nx/storybook:build",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/demo-webform",
+        "configDir": "demo/.storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "test-storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "test-storybook -c demo/.storybook --url=http://localhost:4400"
+      }
+    },
+    "static-storybook": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "demo-webform:build-storybook",
+        "staticFilePath": "dist/storybook/demo-webform",
+        "spa": true
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "demo-webform:build-storybook:ci"
+        }
+      }
+    }
+  }
+}

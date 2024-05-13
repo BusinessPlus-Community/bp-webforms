@@ -1,11 +1,199 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nx"],
+  "plugins": [
+    "@nx",
+    "@typescript-eslint",
+    "eslint-comments",
+    "jest",
+    "jsx-a11y",
+    "prettier",
+    "import",
+    "promise",
+    "react",
+    "googlemaps"
+  ],
+  "extends": [
+    "airbnb",
+    "airbnb-typescript",
+    "plugin:jsx-a11y/recommended",
+    "plugin:jest/recommended",
+    "plugin:prettier/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:eslint-comments/recommended",
+    "plugin:storybook/recommended",
+    "plugin:promise/recommended",
+    "plugin:googlemaps/recommended"
+  ],
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "project": [
+          "components/tsconfig.json",
+          "components/tsconfig.*.json",
+          "demo/tsconfig.json",
+          "demo/tsconfig.*.json",
+          // "functions/tsconfig.json",
+          // "functions/tsconfig.*.json",
+          // "styles/tsconfig.json",
+          // "styles/tsconfig.*.json",
+          // "types/tsconfig.json",
+          // "types/tsconfig.*.json",
+          "tools/tsconfig.tools.json",
+          "tsconfig.base.json"
+        ]
+      },
+      "node": {
+        "project": [
+          "components/tsconfig.json",
+          "components/tsconfig.*.json",
+          "demo/tsconfig.json",
+          "demo/tsconfig.*.json",
+          // "functions/tsconfig.json",
+          // "functions/tsconfig.*.json",
+          // "styles/tsconfig.json",
+          // "styles/tsconfig.*.json",
+          // "types/tsconfig.json",
+          // "types/tsconfig.*.json",
+          "tools/tsconfig.tools.json",
+          "tsconfig.base.json"
+        ]
+      }
+    },
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    }
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "tsconfigRootDir": ".",
+    "project": [
+      "components/tsconfig.json",
+      "components/tsconfig.*.json",
+      "demo/tsconfig.json",
+      "demo/tsconfig.*.json",
+      // "functions/tsconfig.json",
+      // "functions/tsconfig.*.json",
+      // "hooks/tsconfig.json",
+      // "hooks/tsconfig.*.json",
+      // "styles/tsconfig.json",
+      // "styles/tsconfig.*.json",
+      // "types/tsconfig.json",
+      // "types/tsconfig.*.json",
+      "tools/tsconfig.tools.json",
+      // "webforms/**/tsconfig.*.json",
+      // "webforms/**/tsconfig.json",
+      "tsconfig.base.json"
+    ],
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
+  },
+  "rules": {
+    "no-console": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "import/no-cycle": ["error", { "ignoreExternal": true }],
+    "import/no-extraneous-dependencies": 0,
+    "promise/always-return": [2, { "ignoreLastCallback": true }],
+    "react/function-component-definition": [
+      2,
+      { "namedComponents": "arrow-function" }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "react/no-unused-prop-types": "off",
+    "react/require-default-props": "off",
+    "react/jsx-props-no-spreading": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-floating-promises": "off",
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/promise-function-async": "off",
+    "@typescript-eslint/no-misused-promises": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/no-unsafe-call": "off",
+    "@nx/enforce-module-boundaries": [
+      "error",
+      {
+        "enforceBuildableLibDependency": true,
+        "allow": [],
+        "depConstraints": [
+          {
+            "sourceTag": "*",
+            "onlyDependOnLibsWithTags": ["*"]
+          }
+        ]
+      }
+    ]
+  },
   "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"]
+    },
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": [
+          "warn",
+          {
+            "argsIgnorePattern": "^_",
+            "varsIgnorePattern": "^_",
+            "caughtErrorsIgnorePattern": "^_"
+          }
+        ],
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": "variable",
+            "format": ["camelCase", "PascalCase", "UPPER_CASE"],
+            "leadingUnderscore": "allowSingleOrDouble"
+          }
+        ],
         "@nx/enforce-module-boundaries": [
           "error",
           {
@@ -37,6 +225,18 @@
         "jest": true
       },
       "rules": {}
+    },
+    {
+      "files": [
+        "*.stories.tsx",
+        "*.stories.js",
+        "*.stories.jsx",
+        "*.stories.ts"
+      ],
+      "rules": {
+        "import/no-anonymous-default-export": "off",
+        "import/no-extraneous-dependencies": "off"
+      }
     }
   ]
 }

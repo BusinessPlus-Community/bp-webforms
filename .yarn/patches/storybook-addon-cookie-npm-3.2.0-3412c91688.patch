@@ -1,0 +1,157 @@
+diff --git a/README.md b/README.md
+index 166d0fcd25432b34b3c887985cc8551c0a920900..e2018115b84311badd05093f4f2c63ae7b325d0e 100644
+--- a/README.md
++++ b/README.md
+@@ -71,3 +71,43 @@ export const WithOutCookie = Template.bind({});
+ ```
+
+ Each Story has independent cookie.
++
++### Encoding cookie
++
++If you want to encode the cookies on the panel, you can use the `cookieEncoding` option.
++
++```jsx
++export const WithEncodedCookie: Story = {
++  parameters: {
++    cookie: {
++      test: 'TEST!',
++    },
++    cookieEncoding: true,
++  },
++};
++```
++
++This option defaults to `false`.
++
++You can use this option after `v3.1.0`
++
++### Preserve existing cookies
++
++If you want to preserve existing cookies, you can use the `cookiePreserve` option.
++
++Preserve existing cookies, but only manipulate the ones you specify via parameters.
++
++```jsx
++export const PreserveCookies: Story = {
++  parameters: {
++    cookie: {
++      test: 'TEST!',
++    },
++    cookiePreserve: true,
++  },
++};
++```
++
++This option defaults to `false`.
++
++You can use this option after `v3.2.0`
+\ No newline at end of file
+diff --git a/dist/components/PanelContent.js b/dist/components/PanelContent.js
+index 2c0fa51516e209ea0cf15bf5ceb6b34324628869..d2a3291d4ab15b04418958dde9e1e1e3334b6b50 100644
+--- a/dist/components/PanelContent.js
++++ b/dist/components/PanelContent.js
+@@ -33,11 +33,14 @@ var __importStar = (this && this.__importStar) || function (mod) {
+     __setModuleDefault(result, mod);
+     return result;
+ };
++var __importDefault = (this && this.__importDefault) || function (mod) {
++    return (mod && mod.__esModule) ? mod : { "default": mod };
++};
+ Object.defineProperty(exports, "__esModule", { value: true });
+ exports.PanelContent = void 0;
+ var react_1 = __importStar(require("react"));
+ var manager_api_1 = require("@storybook/manager-api");
+-var components_1 = require("@storybook/components");
++var icons_1 = __importDefault(require("@storybook/icons"));
+ var blocks_1 = require("@storybook/blocks");
+ var constants_1 = require("../constants");
+ var utils_1 = require("../utils");
+@@ -65,7 +68,7 @@ var PanelContent = function () {
+     };
+     return (react_1.default.createElement("div", { style: { padding: '10px 20px' } },
+         react_1.default.createElement("button", { style: { marginBottom: '5px' }, onClick: handleClear },
+-            react_1.default.createElement(components_1.Icons, { style: { marginRight: '5px' }, icon: "trash" }),
++            react_1.default.createElement(icons_1.default.TrashIcon, { style: { marginRight: '5px' } }),
+             "Clear All Cookies"),
+         react_1.default.createElement(blocks_1.ObjectControl, { name: "cookie", onChange: handleChange, value: value || defaultCookie, theme: "" })));
+ };
+diff --git a/dist/index.js b/dist/index.js
+index c0dc0f6c52401c3c37b4e4d4a610d62601d766d2..24ea70c724b5db5cea5c36580e90d6100a015730 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -25,9 +25,6 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+ Object.defineProperty(exports, "__esModule", { value: true });
+ exports.managerEntries = exports.config = void 0;
+ __exportStar(require("./cookieDecorator"), exports);
+-if (module && module.hot && module.hot.decline) {
+-    module.hot.decline();
+-}
+ function config(entry) {
+     if (entry === void 0) { entry = []; }
+     return __spreadArray(__spreadArray([], entry, true), [require.resolve('./preview')], false);
+diff --git a/package.json b/package.json
+index 00c47052640e3331474730d4821551350300dfdf..926a561d2addbe7aa079a63116616ccbcbd937e8 100644
+--- a/package.json
++++ b/package.json
+@@ -1,6 +1,6 @@
+ {
+   "name": "storybook-addon-cookie",
+-  "version": "3.2.0",
++  "version": "3.2.1",
+   "description": "Storybook addon for setting document.cookie",
+   "author": "hwookim <gusdn9754@gmail.com>",
+   "main": "dist/index.js",
+@@ -29,11 +29,11 @@
+     "typescript": "^5.0.4"
+   },
+   "peerDependencies": {
+-    "@storybook/blocks": "^7.0.0",
+-    "@storybook/components": "^7.0.0",
+-    "@storybook/manager-api": "^7.0.0",
+-    "@storybook/preview-api": "^7.0.0",
+-    "@storybook/types": "^7.0.0",
++    "@storybook/blocks": "^8.0.0",
++    "@storybook/components": "^8.0.0",
++    "@storybook/manager-api": "^8.0.0",
++    "@storybook/preview-api": "^8.0.0",
++    "@storybook/types": "^8.0.0",
+     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+   },
+diff --git a/src/components/PanelContent.tsx b/src/components/PanelContent.tsx
+index 48c3313e6c6a1ec926da4ae2bd96dee5c27d2661..929181518bfc03f7ee8fce22da48e83628889ac0 100644
+--- a/src/components/PanelContent.tsx
++++ b/src/components/PanelContent.tsx
+@@ -4,7 +4,7 @@ import {
+   useParameter,
+   useStorybookState,
+ } from '@storybook/manager-api';
+-import { Icons } from '@storybook/components';
++import Icons from '@storybook/icons';
+ import { ObjectControl } from '@storybook/blocks';
+
+ import { PARAM_ENCONDING_KEY, PARAM_KEY } from '../constants';
+@@ -41,7 +41,7 @@ export const PanelContent: React.FC = () => {
+   return (
+     <div style={{ padding: '10px 20px' }}>
+       <button style={{ marginBottom: '5px' }} onClick={handleClear}>
+-        <Icons style={{ marginRight: '5px' }} icon="trash" />
++        <Icons.TrashIcon style={{ marginRight: '5px' }} />
+         Clear All Cookies
+       </button>
+       <ObjectControl
+diff --git a/src/index.ts b/src/index.ts
+index bdd608e85fc78ce99c1b1a569374771c42cdc980..567d744b68298c3de5b2b3a16603ff5e69323e36 100644
+--- a/src/index.ts
++++ b/src/index.ts
+@@ -1,9 +1,5 @@
+ export * from './cookieDecorator';
+
+-if (module && module.hot && module.hot.decline) {
+-  module.hot.decline();
+-}
+-
+ export function config(entry: unknown[] = []): unknown[] {
+   return [...entry, require.resolve('./preview')];
+ }
