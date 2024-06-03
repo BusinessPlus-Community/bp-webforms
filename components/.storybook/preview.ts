@@ -60,3 +60,4 @@ export const parameters = {
 
 export const decorators = [cookieDecorator]
 export const preview = [mswLoader]
+export const tags = ['autodocs']

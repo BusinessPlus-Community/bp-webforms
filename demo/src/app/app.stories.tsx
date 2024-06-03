@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { App } from './app'
+import { within, expect } from '@storybook/test'
 
-import { within } from '@storybook/testing-library'
-import { expect } from '@storybook/jest'
+import { App } from './app'
 
 const meta: Meta<typeof App> = {
   component: App,
@@ -11,12 +10,9 @@ const meta: Meta<typeof App> = {
 export default meta
 type Story = StoryObj<typeof App>
 
-export const Primary = {
+export const Primary: Story = {
   args: {},
-}
-
-export const Heading: Story = {
-  args: {},
+  /* eslint-disable-next-line @typescript-eslint/require-await */
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     expect(canvas.getByText(/Welcome to App!/gi)).toBeTruthy()

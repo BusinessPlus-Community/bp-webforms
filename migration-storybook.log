@@ -1,0 +1,65 @@
+🔎 checking possible migrations..
+
+🔎 found a 'remove-jest-testing-library' migration:
+╭ Automigration detected ──────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                              │
+│   Attention: We've detected that you're using the following packages which are known to be incompatible since Storybook 8:   │
+│                                                                                                                              │
+│   - @storybook/jest                                                                                                          │
+│   - @storybook/testing-library                                                                                               │
+│                                                                                                                              │
+│   We will uninstall them for you and install @storybook/test instead.                                                        │
+│                                                                                                                              │
+│   Also, we can help you migrate your stories to use the new package.                                                         │
+│                                                                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+? Please enter the glob for your stories to migrate to @storybook/test » ./src/**/*.stories.*√ Please enter the glob for your stories to migrate to @storybook/test ... ./src/**/*.stories.*
+=> Applying migrate-to-test-package: 0 files
+=> No matching files for glob: ./src/**/*.stories.*
+✅ ran remove-jest-testing-library migration
+
+🔎 found a 'autodocsTrue' migration:
+╭ Automigration detected ────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                    │
+│   We've changed the configuration of autodocs (previous docsPage), so now the value:               │
+│     - docs.autodocs: true -- means automatically create docs for every CSF file                    │
+│     - docs.autodocs: 'tag' -- means only create autodocs for CSF files with the 'autodocs' tag     │
+│     - docs.autodocs: false -- means never create autodocs                                          │
+│                                                                                                    │
+│   Based on your prior configuration,  we can set the `docs.autodocs` to keep your old behaviour:   │
+│                                                                                                    │
+│   docs: { autodocs: true }                                                                         │
+│                                                                                                    │
+│   More info: https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#autodocs-changes      │
+│                                                                                                    │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────╯
+✅ Setting 'docs.autodocs' to true in main.js
+✅ ran autodocsTrue migration
+
+⚠️  failed to check fix upgradeStorybookRelatedDependencies
+
+TypeError: Invalid Version: patch%3Astorybook-addon-cookie
+    at new SemVer (C:\Users\zbirge\AppData\Local\Temp\xfs-1ac924d0\dlx-32156\node_modules\@storybook\cli\node_modules\semver\classes\semver.js:38:13)
+    at compare (C:\Users\zbirge\AppData\Local\Temp\xfs-1ac924d0\dlx-32156\node_modules\@storybook\cli\node_modules\semver\functions\compare.js:3:32)
+    at gt (C:\Users\zbirge\AppData\Local\Temp\xfs-1ac924d0\dlx-32156\node_modules\@storybook\cli\node_modules\semver\functions\gt.js:2:29)
+    at C:\Users\zbirge\AppData\Local\Temp\xfs-1ac924d0\dlx-32156\node_modules\@storybook\cli\dist\generate.js:558:1286
+    at Array.filter (<anonymous>)
+    at Object.check (C:\Users\zbirge\AppData\Local\Temp\xfs-1ac924d0\dlx-32156\node_modules\@storybook\cli\dist\generate.js:558:1180)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async runFixes (C:\Users\zbirge\AppData\Local\Temp\xfs-1ac924d0\dlx-32156\node_modules\@storybook\cli\dist\generate.js:634:2927)
+    at async automigrate (C:\Users\zbirge\AppData\Local\Temp\xfs-1ac924d0\dlx-32156\node_modules\@storybook\cli\dist\generate.js:634:1635)
+    at async doUpgrade (C:\Users\zbirge\AppData\Local\Temp\xfs-1ac924d0\dlx-32156\node_modules\@storybook\cli\dist\generate.js:650:1628)
+
+🔎 found a 'autodocs-tags' migration:
+╭ Automigration detected ───────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                   │
+│   The docs.autodocs setting in components\.storybook\main.ts is deprecated.                                       │
+│                                                                                                                   │
+│   Learn more: https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#mainjs-docsautodocs-is-deprecated   │
+│                                                                                                                   │
+│   Remove docs.autodocs and update components\.storybook\preview.ts?                                               │
+│                                                                                                                   │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+✅ Adding "autodocs" tag to components\.storybook\preview.ts
+✅ Removing "docs.autodocs" from components\.storybook\main.ts
+✅ ran autodocs-tags migration

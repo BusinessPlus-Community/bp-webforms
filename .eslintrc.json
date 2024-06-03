@@ -1,6 +1,27 @@
 {
   "root": true,
-  "ignorePatterns": ["**/*"],
+  "ignorePatterns": [
+    "**/*",
+    "node_modules",
+    "/node_modules",
+    "/.pnp",
+    ".pnp.js",
+    "/coverage",
+    "/test",
+    "/build",
+    "/dist",
+    ".DS_Store",
+    ".env.local",
+    ".env.development.local",
+    ".env.test.local",
+    ".env.production.local",
+    "npm-debug.log*",
+    "yarn-debug.log*",
+    "yarn-error.log*",
+    "mockServiceWorker.js",
+    "/.nx/cache",
+    ".nx/cache"
+  ],
   "plugins": [
     "@nx",
     "@typescript-eslint",
@@ -36,12 +57,6 @@
           "components/tsconfig.*.json",
           "demo/tsconfig.json",
           "demo/tsconfig.*.json",
-          // "functions/tsconfig.json",
-          // "functions/tsconfig.*.json",
-          // "styles/tsconfig.json",
-          // "styles/tsconfig.*.json",
-          // "types/tsconfig.json",
-          // "types/tsconfig.*.json",
           "tools/tsconfig.tools.json",
           "tsconfig.base.json"
         ]
@@ -52,12 +67,6 @@
           "components/tsconfig.*.json",
           "demo/tsconfig.json",
           "demo/tsconfig.*.json",
-          // "functions/tsconfig.json",
-          // "functions/tsconfig.*.json",
-          // "styles/tsconfig.json",
-          // "styles/tsconfig.*.json",
-          // "types/tsconfig.json",
-          // "types/tsconfig.*.json",
           "tools/tsconfig.tools.json",
           "tsconfig.base.json"
         ]
@@ -85,17 +94,7 @@
       "components/tsconfig.*.json",
       "demo/tsconfig.json",
       "demo/tsconfig.*.json",
-      // "functions/tsconfig.json",
-      // "functions/tsconfig.*.json",
-      // "hooks/tsconfig.json",
-      // "hooks/tsconfig.*.json",
-      // "styles/tsconfig.json",
-      // "styles/tsconfig.*.json",
-      // "types/tsconfig.json",
-      // "types/tsconfig.*.json",
       "tools/tsconfig.tools.json",
-      // "webforms/**/tsconfig.*.json",
-      // "webforms/**/tsconfig.json",
       "tsconfig.base.json"
     ],
     "ecmaFeatures": {
@@ -132,12 +131,24 @@
         }
       }
     ],
-    "import/no-cycle": ["error", { "ignoreExternal": true }],
+    "import/no-cycle": [
+      "error",
+      {
+        "ignoreExternal": true
+      }
+    ],
     "import/no-extraneous-dependencies": 0,
-    "promise/always-return": [2, { "ignoreLastCallback": true }],
+    "promise/always-return": [
+      2,
+      {
+        "ignoreLastCallback": true
+      }
+    ],
     "react/function-component-definition": [
       2,
-      { "namedComponents": "arrow-function" }
+      {
+        "namedComponents": "arrow-function"
+      }
     ],
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
@@ -212,12 +223,18 @@
     {
       "files": ["*.ts", "*.tsx"],
       "extends": ["plugin:@nx/typescript"],
-      "rules": {}
+      "rules": {
+        "@typescript-eslint/no-extra-semi": "error",
+        "no-extra-semi": "off"
+      }
     },
     {
       "files": ["*.js", "*.jsx"],
       "extends": ["plugin:@nx/javascript"],
-      "rules": {}
+      "rules": {
+        "@typescript-eslint/no-extra-semi": "error",
+        "no-extra-semi": "off"
+      }
     },
     {
       "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],

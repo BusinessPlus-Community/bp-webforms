@@ -23,3 +23,4 @@ yarn cross-env NX_MIGRATE_USE_LOCAL=true nx migrate --run-migrations --if-exists
 
 :: Update Storybook version ::
 yarn dlx storybook@latest upgrade --yes --config-dir .\components\.storybook --package-manager yarn2
+yarn dlx storybook@latest automigrate --yes --config-dir .\demo\.storybook --package-manager yarn2

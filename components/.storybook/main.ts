@@ -2,11 +2,14 @@ import type { StorybookConfig } from '@storybook/react-vite'
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
+
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     'storybook-addon-cookie',
+    '@chromatic-com/storybook',
   ],
+
   framework: {
     name: '@storybook/react-vite',
     options: {
@@ -15,6 +18,7 @@ const config: StorybookConfig = {
       },
     },
   },
+
   staticDirs: [
     {
       from: '../../tools/assets',
@@ -25,9 +29,12 @@ const config: StorybookConfig = {
       to: '/mockServiceWorker.js',
     },
   ],
-  docs: {
-    autodocs: true,
+
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
   },
+
+  docs: {},
 }
 
 export default config
